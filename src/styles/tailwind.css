@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Premium Color Palette - Light & Elegant */
+    --color-primary: #2563eb; /* Strong blue for CTAs */
+    --color-primary-foreground: #ffffff;
+    
+    --color-secondary: #1e40af; /* Deeper blue */
+    --color-secondary-foreground: #ffffff;
+    
+    --color-accent: #f59e0b; /* Warm amber accent */
+    --color-accent-foreground: #1a202c;
+    
+    /* Soft Neutral Background */
+    --color-background: #ffffff; /* Pure white */
+    --color-foreground: #1f2937; /* Dark gray for text */
+    
+    /* Card with subtle elevation */
+    --color-card: #ffffff;
+    --color-card-foreground: #1f2937;
+    
+    --color-popover: #ffffff;
+    --color-popover-foreground: #1f2937;
+    
+    /* Muted tones for secondary text */
+    --color-muted: #f3f4f6;
+    --color-muted-foreground: #6b7280;
+    
+    /* Borders - very subtle */
+    --color-border: #e5e7eb;
+    --color-input: #e5e7eb;
+    --color-ring: #2563eb;
+    
+    --color-destructive: #dc2626;
+    --color-destructive-foreground: #ffffff;
+    
+    --color-success: #10b981;
+    --color-success-foreground: #ffffff;
+    
+    --color-warning: #f59e0b;
+    --color-warning-foreground: #1a202c;
+    
+    --color-error: #dc2626;
+    --color-error-foreground: #ffffff;
+    
+    /* Conversion green for CTAs */
+    --color-conversion: #10b981;
+    --color-conversion-foreground: #ffffff;
+    
+    --color-trust: #3b82f6;
+    --color-trust-foreground: #ffffff;
+    
+    --color-brand-navy: #1e3a8a;
+    --color-brand-navy-foreground: #ffffff;
+    
+    --color-brand-charcoal: #374151;
+    --color-brand-charcoal-foreground: #ffffff;
+    
+    /* Spacing */
+    --spacing-base: 8px;
+    
+    /* Rounded corners for premium feel */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    
+    /* Soft shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    
+    /* Smooth transitions */
+    --transition-base: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    --transition-fast: 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .dark {
+    --color-background: #0a0a0a;
+    --color-foreground: #fafbfc;
+    
+    --color-card: #1a202c;
+    --color-card-foreground: #fafbfc;
+    
+    --color-popover: #1a202c;
+    --color-popover-foreground: #fafbfc;
+    
+    --color-muted: #2d3748;
+    --color-muted-foreground: #a0aec0;
+    
+    --color-border: #2d3748;
+    --color-input: #2d3748;
+    
+    --color-primary: #4a6fa5;
+    --color-primary-foreground: #ffffff;
+    
+    --color-secondary: #2d3748;
+    --color-secondary-foreground: #fafbfc;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Source Sans 3', sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Crimson Text', serif;
+    font-weight: 600;
+  }
+
+  button, .btn {
+    font-family: 'Outfit', sans-serif;
+  }
+
+  code, pre, .mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  /* Header Styles */
+  .header-container {
+    @apply bg-card shadow-md fixed top-0 left-0 right-0 z-50;
+    transition: var(--transition-base);
+  }
+
+  .header-content {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .header-nav {
+    @apply flex items-center justify-between h-16 lg:h-20;
+  }
+
+  .header-logo {
+    @apply flex items-center space-x-3;
+  }
+
+  .header-logo-icon {
+    @apply w-10 h-10 lg:w-12 lg:h-12 rounded-lg flex items-center justify-center;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    transition: var(--transition-base);
+  }
+
+  .header-logo-icon:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .header-logo-text {
+    @apply text-xl lg:text-2xl font-bold text-foreground;
+    font-family: 'Crimson Text', serif;
+  }
+
+  .header-menu-desktop {
+    @apply hidden lg:flex items-center space-x-1;
+  }
+
+  .header-menu-item {
+    @apply px-4 py-2 text-sm font-medium text-foreground rounded-md transition-all;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  .header-menu-item:hover {
+    @apply bg-muted;
+    transform: translateY(-1px);
+  }
+
+  .header-menu-item.active {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .header-cta {
+    @apply hidden lg:flex items-center space-x-4;
+  }
+
+  .header-mobile-toggle {
+    @apply lg:hidden p-2 rounded-md text-foreground hover:bg-muted transition-colors;
+  }
+
+  .header-mobile-menu {
+    @apply lg:hidden bg-card border-t border-border;
+    transition: var(--transition-base);
+  }
+
+  .header-mobile-menu-content {
+    @apply px-4 py-6 space-y-3;
+  }
+
+  .header-mobile-menu-item {
+    @apply block px-4 py-3 text-base font-medium text-foreground rounded-md transition-all;
+  }
+
+  .header-mobile-menu-item:hover {
+    @apply bg-muted;
+  }
+
+  .header-mobile-menu-item.active {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  /* Footer Styles */
+  .footer-container {
+    @apply bg-brand-charcoal text-white mt-auto;
+  }
+
+  .footer-content {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16;
+  }
+
+  .footer-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12;
+  }
+
+  .footer-section {
+    @apply space-y-4;
+  }
+
+  .footer-section-title {
+    @apply text-lg font-semibold text-white mb-4;
+    font-family: 'Crimson Text', serif;
+  }
+
+  .footer-section-description {
+    @apply text-sm text-gray-300 leading-relaxed;
+  }
+
+  .footer-links {
+    @apply space-y-3;
+  }
+
+  .footer-link {
+    @apply block text-sm text-gray-300 hover:text-white transition-colors;
+  }
+
+  .footer-social {
+    @apply flex items-center space-x-4 mt-6;
+  }
+
+  .footer-social-link {
+    @apply w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all;
+  }
+
+  .footer-social-link:hover {
+    transform: translateY(-2px);
+  }
+
+  .footer-bottom {
+    @apply border-t border-white/10 mt-12 pt-8;
+  }
+
+  .footer-bottom-content {
+    @apply flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0;
+  }
+
+  .footer-copyright {
+    @apply text-sm text-gray-400;
+  }
+
+  .footer-bottom-links {
+    @apply flex items-center space-x-6;
+  }
+
+  .footer-bottom-link {
+    @apply text-sm text-gray-400 hover:text-white transition-colors;
+  }
+
+  /* Trust Badge Styles */
+.trust-badge  {
+    @apply inline-flex items-center space-x-2 px-3 py-1.5 rounded-full text-trust text-xs font-medium;
+    animation: pulse-subtle 2s infinite;
+  }
+
+  @keyframes pulse-subtle {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+}
+
+  /* Conversion Button Styles */
+  .btn-conversion  {
+    @apply bg-conversion text-conversion-foreground font-semibold px-6 py-3 rounded-md transition-all;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .btn-conversion:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Main Content Offset */
+  .main-content {
+    @apply pt-16 lg:pt-20 min-h-screen;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
