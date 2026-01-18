@@ -23,7 +23,6 @@ const AboutUs = () => {
         <StorySection />
         <ValuesSection />
         <TeamSection />
-        <CertificationsSection />
         <TestimonialsSection />
         <CTASection />
       </main>
