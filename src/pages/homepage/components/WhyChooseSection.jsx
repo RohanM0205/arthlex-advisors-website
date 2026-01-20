@@ -8,8 +8,8 @@ const WhyChooseSection = () => {
   const strengths = [
     {
       icon: 'Shield',
-      title: 'Trusted Expertise',
-      description: 'SEBI registered with 15+ years of proven advisory excellence',
+      title: 'Experienced Professionals',
+      description: 'Backed by deep industry experience and a strong understanding of financial frameworks',
       color: 'text-blue-600',
       bgColor: 'bg-blue-50'
     },
@@ -23,7 +23,7 @@ const WhyChooseSection = () => {
     {
       icon: 'Users',
       title: 'Client-Centric',
-      description: '500+ satisfied clients trust us for long-term financial guidance',
+      description: 'Trusted by clients for transparent, ethical, and practical financial advice',
       color: 'text-purple-600',
       bgColor: 'bg-purple-50'
     },

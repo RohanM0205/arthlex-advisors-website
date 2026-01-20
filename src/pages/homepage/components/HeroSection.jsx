@@ -113,9 +113,12 @@ const HeroSection = () => {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground leading-tight">
               Arthlex Advisors
             </h1>
-            <p className="text-xl md:text-2xl text-primary font-semibold tracking-wide">
+            {/* <p className="text-xl md:text-2xl text-primary font-semibold tracking-wide">
               Strategic Tax, Finance & Business Advisory
-            </p>
+            </p> */}
+            <p className="text-2xl md:text-3xl font-semibold text-primary tracking-wide">
+  Clarity in Capital, <span className="italic">Confidence in Growth</span>
+</p>
           </div>
 
           {/* Description */}
