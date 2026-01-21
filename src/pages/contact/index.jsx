@@ -6,6 +6,9 @@ import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
 import Input from '../../components/ui/Input';
 import Select from '../../components/ui/Select';
+import WhyClientsChoose from './components/WhyClientsChoose';
+
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -169,7 +172,7 @@ const Contact = () => {
                   <h3 className="text-xl font-bold text-foreground mb-3">Call Us</h3>
                   <p className="text-muted-foreground mb-4">Mon-Fri, 9AM-6PM IST</p>
                   <a href="tel:+91 7498242139" className="text-blue-600 font-semibold hover:underline">
-                    +91 22 4567 8900
+                  +91  74982 42139
                   </a>
                 </div>
 
@@ -380,6 +383,7 @@ const Contact = () => {
               </div>
             </div>
           </section>
+          <WhyClientsChoose />
         </main>
 
         <Footer />
