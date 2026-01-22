@@ -326,6 +326,8 @@ import ProgressIndicator from './components/ProgressIndicator';
 import ConfirmationSummary from './components/ConfirmationSummary';
 import SuccessMessage from './components/SuccessMessage';
 import ServiceSelector from './components/ServiceSelector';
+import BookingValueSection from './components/BookingValueSection';
+
 
 /* ================= SERVICE CATEGORIES ================= */
 const SERVICE_CATEGORIES = [
@@ -566,8 +568,11 @@ const BookConsultation = () => {
             </>
           )}
 
+<BookingValueSection />
+
         </div>
       </main>
+      
 
       <Footer />
     </>
