@@ -20,11 +20,11 @@ const Homepage = () => {
         <title>Arthlex Advisors - Strategic Financial Advisory & Tax Planning Services</title>
         <meta 
           name="description" 
-          content="SEBI registered financial advisory firm offering strategic tax planning, business advisory, compliance management, and startup support. Your trusted growth partner for sustainable business success in India." 
+          content="Financial advisory firm offering strategic tax planning, business advisory, compliance management, and startup support. Your trusted growth partner for sustainable business success in India." 
         />
         <meta 
           name="keywords" 
-          content="financial advisory, tax planning, business advisory, compliance management, startup support, SEBI registered, chartered accountant, India" 
+          content="financial advisory, tax planning, business advisory, compliance management, startup support, chartered accountant, India" 
         />
         <meta property="og:title" content="Arthlex Advisors - Strategic Financial Advisory Services" />
         <meta property="og:description" content="Transform complex financial landscapes into clear, actionable strategies for sustainable business success." />

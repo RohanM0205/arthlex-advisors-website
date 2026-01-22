@@ -5,7 +5,7 @@ const WhatsAppWidget = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = '919876543210';
+    const phoneNumber = '917498242139';
     const message = encodeURIComponent('Hi, I would like to know more about your financial advisory services.');
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
