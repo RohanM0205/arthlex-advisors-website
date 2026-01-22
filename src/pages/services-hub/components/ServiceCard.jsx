@@ -9,39 +9,81 @@ const ServiceCard = ({ service, featured = false }) => {
   const handleLearnMore = () => {
     const element = document.getElementById(service?.id);
     if (element) {
-      element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
   const handleBookConsultation = () => {
-    navigate('/book-consultation', { state: { selectedService: service?.id } });
+    navigate('/book-consultation', {
+      state: { selectedService: service?.id }
+    });
   };
 
   return (
-    <div className={`bg-card rounded-lg p-6 md:p-8 transition-all hover:shadow-lg ${featured ? 'border-2 border-primary' : 'border border-border'}`}>
+    <div
+      className={`
+        relative bg-white rounded-2xl p-6 md:p-8 border
+        transition-all duration-300
+        hover:-translate-y-1 hover:shadow-xl
+        ${featured ? 'border-primary shadow-lg' : 'border-border'}
+      `}
+    >
+      {/* Premium highlight for featured */}
       {featured && (
-        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-4">
-          <Icon name="Star" size={14} />
-          <span>Most Popular</span>
+        <div className="absolute -top-3 right-6">
+          <div className="flex items-center gap-2 px-4 py-1.5 rounded-full
+            bg-primary text-primary-foreground text-xs font-semibold shadow-md">
+            <Icon name="Star" size={14} />
+            Recommended
+          </div>
         </div>
       )}
-      <div className="flex items-start space-x-4 mb-4">
-        <div className={`w-12 h-12 md:w-14 md:h-14 rounded-lg flex items-center justify-center ${featured ? 'bg-primary text-primary-foreground' : 'bg-secondary/10 text-secondary'}`}>
-          <Icon name={service?.icon} size={24} />
+
+      {/* Header */}
+      <div className="flex items-start gap-4 mb-6">
+        <div
+          className={`
+            w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0
+            ${featured
+              ? 'bg-primary text-primary-foreground'
+              : 'bg-primary/10 text-primary'}
+          `}
+        >
+          <Icon name={service?.icon} size={26} />
         </div>
-        <div className="flex-1">
-          <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">{service?.title}</h3>
-          <p className="text-sm md:text-base text-muted-foreground">{service?.shortDescription}</p>
+
+        <div>
+          <h3 className="text-xl md:text-2xl font-bold text-foreground leading-tight">
+            {service?.title}
+          </h3>
+          <p className="mt-1 text-sm md:text-base text-muted-foreground">
+            {service?.shortDescription}
+          </p>
         </div>
       </div>
-      <div className="space-y-3 mb-6">
+
+      {/* Divider */}
+      <div className="h-px bg-border mb-5" />
+
+      {/* Key Features */}
+      <div className="space-y-3 mb-8">
         {service?.keyFeatures?.map((feature, index) => (
-          <div key={index} className="flex items-start space-x-3">
-            <Icon name="CheckCircle2" size={18} className="text-success mt-0.5 flex-shrink-0" />
-            <span className="text-sm md:text-base text-foreground">{feature}</span>
+          <div key={index} className="flex items-start gap-3">
+            <div className="mt-1">
+              <Icon
+                name="CheckCircle"
+                size={16}
+                className="text-green-600"
+              />
+            </div>
+            <span className="text-sm md:text-base text-foreground leading-snug">
+              {feature}
+            </span>
           </div>
         ))}
       </div>
+
+      {/* Actions */}
       <div className="flex flex-col sm:flex-row gap-3">
         <Button
           variant="outline"
@@ -51,8 +93,9 @@ const ServiceCard = ({ service, featured = false }) => {
           fullWidth
           className="sm:flex-1"
         >
-          Learn More
+          Explore Details
         </Button>
+
         <Button
           variant="default"
           onClick={handleBookConsultation}
@@ -61,7 +104,7 @@ const ServiceCard = ({ service, featured = false }) => {
           fullWidth
           className="sm:flex-1 btn-conversion"
         >
-          Book Now
+          Book Consultation
         </Button>
       </div>
     </div>
