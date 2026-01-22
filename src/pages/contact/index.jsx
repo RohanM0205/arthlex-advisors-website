@@ -6,7 +6,7 @@ import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
 import Input from '../../components/ui/Input';
 import Select from '../../components/ui/Select';
-import WhyClientsChoose from './components/WhyClientsChoose';
+import WhatHappensNext from './components/WhatHappensNext';
 
 
 
@@ -383,7 +383,7 @@ const Contact = () => {
               </div>
             </div>
           </section>
-          <WhyClientsChoose />
+          <WhatHappensNext />
         </main>
 
         <Footer />

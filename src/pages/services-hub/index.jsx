@@ -6,7 +6,7 @@ import Footer from '../../components/ui/Footer';
 import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
 import OtherServiceModal from './components/OtherServiceModal';
-import HowWeWork from "./components/HowWeWork";
+import WhoThisServiceIsFor from "./components/WhoThisServiceIsFor";
 
 
 /* ================= KEY BENEFITS (LOCKED – DO NOT CHANGE) ================= */
@@ -284,7 +284,7 @@ const ServicesHub = () => {
               ))}
             </div>
           </section>
-          <HowWeWork />
+          <WhoThisServiceIsFor />
 
           {/* ================= FINAL CTA ================= */}
           <section className="py-20 md:py-28 bg-gradient-to-br from-blue-600 to-blue-800 text-center">
